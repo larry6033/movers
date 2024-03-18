@@ -10,9 +10,8 @@ const messageError = document.querySelector(".message__error");
 console.log(messageError);
 console.log(vehicleError);
 
-nameError.addEventListener("keyup", function(){
+nameError.addEventListener("keyup", function(e){
     // alert('bitch');
-});
 
 function valiDateName (){
  let name = document.querySelector("#contact-name").value;
@@ -28,6 +27,8 @@ function valiDateName (){
  nameError.innerHTML = 'valid';
  return true;
 }valiDateName ();
+
+});
 
 
 

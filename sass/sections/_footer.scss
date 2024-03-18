@@ -6,3 +6,17 @@ footer{
     background-color: $Very-Pale-Cyan;
     padding:3em;
 }
+
+
+@media screen and (max-width: 414px) {
+    footer{
+        // color: red;
+        display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:2em;
+    }
+    
+    
+    
+    }

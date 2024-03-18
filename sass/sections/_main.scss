@@ -15,7 +15,7 @@
 
 .inputs {
   padding: 2em;
-  background-color: aqua;
+  background-color: $Very-Pale-Cyan;
   @include flex(center, center, column);
   gap: 2em;
   margin: 5em;
@@ -73,3 +73,32 @@ margin: 2em;
 .testimonies{
   width: 70%;
 }
+
+// @media screen and (max-width: 414px) {
+//   .main__services{
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//   }
+
+//   .main__flex{
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//   }
+// }
+
+
+@media screen and (max-width: 414px) {
+ .main  {
+  // color: red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  // background-color: red;
+
+ }
+  
+  
+  
+  }
