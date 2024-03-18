@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: center;
+  background-color: hsl(193, 100%, 96%);
+  padding: 3em;
+}
+
+.nav__section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: center;
+  background-color: hsl(193, 100%, 96%);
+  width: 100%;
+}
+
+.nav__section h1 {
+  color: red;
+  font-size: 3rem;
+}
+
+.nav__list ul li {
+  list-style-type: none;
+  display: inline-flex;
+  padding: 3em;
+}
+
+@media screen and (max-width: 414px) {
+  .nav__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 2em;
+  }
+  .nav__list ul li {
+    display: none;
+  }
+}
+.hero__img {
+  background: url("../images/33f002db217e1fa6585be279913cd6f8.jpg") no-repeat center center/cover;
+  height: 90vh;
+}
+
+.top__hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: center;
+  gap: 3em;
+}
+
+.hero__content {
+  width: 25%;
+  background-color: hsl(193, 100%, 96%);
+  padding: 2em;
+  margin-top: 2em;
+}
+
+.about {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/about us.jpeg") no-repeat center center/cover;
+  height: 40vh;
+  color: white;
+}
+
+.about h1 p {
+  text-align: center;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 414px) {
+  .top__hero img {
+    width: 100%;
+  }
+}
+.main__services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.main__content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: center;
+  width: 30%;
+  gap: 5em;
+}
+
+.inputs {
+  padding: 2em;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  margin: 5em;
+  box-shadow: 0 0 1px solid black;
+}
+
+.inputs input {
+  padding: 1em;
+  margin: 2em;
+}
+
+.inputs span {
+  font-size: 14px;
+  color: red;
+}
+
+.about__section {
+  background-color: hsl(193, 100%, 96%);
+  padding: 2em;
+  box-shadow: 0 0 1px solid black;
+  width: 20%;
+}
+
+.btn {
+  padding: 1em 2em;
+  background-color: hsl(193, 100%, 96%);
+  cursor: pointer;
+}
+
+.about__content img {
+  margin: 2em;
+  align-items: center;
+  align-content: center;
+}
+
+* {
+  font-style: normal;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  width: 97%;
+}

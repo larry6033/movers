@@ -1,0 +1,8 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+
+footer{
+    @include flex(space-around, center, center);
+    background-color: $Very-Pale-Cyan;
+    padding:3em;
+}
