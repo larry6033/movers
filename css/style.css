@@ -179,10 +179,6 @@ footer {
   margin: 2em;
 }
 
-.testimonies {
-  width: 70%;
-}
-
 @media screen and (max-width: 414px) {
   .main {
     display: flex;

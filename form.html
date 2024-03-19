@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-
+<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     <title>Document</title>
   </head>
   <body>
@@ -28,14 +28,15 @@
 
     <!-- hero section -->
     <section class="inputs">
-      <div class="form__content">
+       <div class="form__content">
         <label>Enter your name:</label>
         <input
           type="text"
           class="name__error"
           placeholder="Enter your name"
-          id="contact-name"
-        />
+          onkeyup="validateName()"
+          id="contact-name"/>
+        
         <span id="name-error"></span>
       </div>
 
@@ -47,7 +48,7 @@
           placeholder="Enter your email"
         />
         <span id="name-error"></span>
-      </div>
+      </div> 
       <div class="form__content">
         <label>Enter Phone No:</label>
         <input
@@ -57,15 +58,15 @@
         />
         <span id="phone-error"></span>
       </div>
-      <div class="form__content">
+      <!-- <div class="form__content">
         <label>Enter Address:</label>
         <input
           type="text"
           class="address__error"
           placeholder="enter your Address"
-        />
-        <span id="address-error"></span>
-      </div>
+        /> -->
+        <!-- <span id="address-error"></span> -->
+      <!-- </div> -->
       <div class="form__content">
         <label>current location:</label>
         <input type="text" class="location__error" placeholder="Enter your " />
