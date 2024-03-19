@@ -12,8 +12,9 @@ console.log(vehicleError);
 
 nameError.addEventListener("keyup", function(e){
     // alert('bitch');
+   });
 
-function valiDateName (){
+function valiDateName(){
  let name = document.querySelector("#contact-name").value;
 
  if(name.length == 0){
@@ -28,7 +29,6 @@ function valiDateName (){
  return true;
 }valiDateName ();
 
-});
 
 
 

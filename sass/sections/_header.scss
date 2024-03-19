@@ -22,6 +22,11 @@
     padding:3em;
     cursor: pointer;
 }
+.nav__list ul li a{
+list-style-type: none;
+}
+
+
 
 @media screen and (max-width: 414px) {
 .nav__section{

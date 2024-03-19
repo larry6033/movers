@@ -37,6 +37,10 @@ footer {
   cursor: pointer;
 }
 
+.nav__list ul li a {
+  list-style-type: none;
+}
+
 @media screen and (max-width: 414px) {
   .nav__section {
     display: flex;
@@ -118,20 +122,27 @@ footer {
 }
 
 .inputs {
-  padding: 2em;
   background-color: hsl(193, 100%, 96%);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  left: 650px;
   gap: 2em;
+  width: 25%;
   margin: 5em;
-  box-shadow: 0 0 1px solid black;
+  border: 2px solid black;
 }
 
 .inputs input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: center;
   padding: 1em;
   margin: 2em;
+  box-shadow: 0 0 1rem solid black;
 }
 
 .inputs span {
@@ -177,6 +188,12 @@ footer {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+  }
+  .inputs {
+    width: 100%;
+    position: relative;
+    left: -82px;
+    text-align: center;
   }
 }
 * {
