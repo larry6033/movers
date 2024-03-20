@@ -45,6 +45,16 @@
     @include flex(center, center)
 }
 
+
+html,
+body,
+#map {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 @media screen and (max-width: 414px) {
 
     .top__hero img{

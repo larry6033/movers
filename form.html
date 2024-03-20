@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=519b09bcd038461aa28d5cf702b9e0e9"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk"></script> -->
+
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
@@ -101,8 +104,23 @@
       <span id="submit__error"> </span>
       <!-- <p ></p> -->
       
+
+
     </section>
+      <input id="origin-input" value="nairobi, yaya" />
+      <input id="destination-input" value="Nairobi, kasarani " />
+      <div id="mode-selector">
+        <input id="changemode-walking" type="radio" value="WALKING" />
+        <input id="changemode-transit" type="radio" value="TRANSIT" />
+        <input id="changemode-driving" type="radio" value="DRIVING" checked="checked" />
+      </div>
+      <div id="total"></div>
+      <div id="map"></div>
+      
+
+
     <!-- footer -->
+
 
     <footer>
       <div>
@@ -118,7 +136,7 @@
         </ul>
       </div>
     </footer>
-
+    <script src="./js/script.js"></script>
     <script src="./js/form.js"></script>
   </body>
 </html>
