@@ -7,8 +7,8 @@ const phoneNumber = document.querySelector(".phone");
 console.log(phoneNumber);
 const vehicles = document.querySelector(".vehicle");
 console.log(vehicles);
-// let inputPress = document.querySelectorAll(".input");
-// console.log(inputPress);
+let inputPress = document.querySelector(".btn");
+console.log(inputPress);
 
 
 
@@ -141,23 +141,35 @@ function showAlternativeRoutes(
   );
 }
 
-document.querySelectorAll(".input").addEventListener("keyup", ()=>{
-   // console.log(shortest);
-   alert("hey");
 
-   if( numbers.value === "" || numbers.value === null ){
+
+inputPress.addEventListener("click", ()=>{
+   // console.log(shortest);
+   // alert("hey");
+
+   if( phoneNumber === 10 ){
       return true;
+      // phoneNumber.value ="input numbers";
+      parseInt(phoneNumber.value);
    }else{
       return false;
-   numbers.value ="input numbers";
+   phoneNumber.value ="input numbers";
    }
+
+  if( vehicles.value === "pickup" || vehicles.value === "lorry"  ){
+      return true;
+      // phoneNumber.value ="input numbers";
+      vehicles.value;
+   }else{
+      return false;
+   vehicles.value =" not part of our vehicles ";
+   }
+
+   if( email.classList.contains("@gmail.com")  ){
+      return true;
+   }else if( email.classList.contains("number") ){
+      return false;
+   email.value =" replace number  ";
+   }   
 })
 
-
-// inputPress.addEventListener('keyup', ()=>{
-
-
-
-
-
-// })
