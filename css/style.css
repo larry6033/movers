@@ -165,7 +165,7 @@ footer {
 html,
 body,
 #map {
-  height: 100%;
+  height: 60%;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -224,6 +224,12 @@ body,
   padding: 1em 5em;
   margin: 2em;
   box-shadow: 0 0 1rem solid black;
+  border-radius: 50px;
+}
+
+.inputs h1 {
+  font-size: 3rem;
+  color: hsl(192, 100%, 9%);
 }
 
 .inputs span {
@@ -245,6 +251,7 @@ body,
   padding: 1em 2em;
   background-color: hsl(193, 100%, 96%);
   cursor: pointer;
+  border-radius: 50px;
 }
 
 .about__content img {

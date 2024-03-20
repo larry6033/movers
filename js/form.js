@@ -1,3 +1,17 @@
+
+const names = document.querySelector(".name");
+console.log(names);
+const email = document.querySelector(".email");
+console.log(email);
+const phoneNumber = document.querySelector(".phone");
+console.log(phoneNumber);
+const vehicles = document.querySelector(".vehicle");
+console.log(vehicles);
+// let inputPress = document.querySelectorAll(".input");
+// console.log(inputPress);
+
+
+
 let color = ["red", "blue", "green"];
 let directions = [];
 let shortest = [];
@@ -127,6 +141,23 @@ function showAlternativeRoutes(
   );
 }
 
-// document.getElementById("calculateDistance").addEventListener("click", ()=>{
-//    console.log(shortest)
+document.querySelectorAll(".input").addEventListener("keyup", ()=>{
+   // console.log(shortest);
+   alert("hey");
+
+   if( numbers.value === "" || numbers.value === null ){
+      return true;
+   }else{
+      return false;
+   numbers.value ="input numbers";
+   }
+})
+
+
+// inputPress.addEventListener('keyup', ()=>{
+
+
+
+
+
 // })
