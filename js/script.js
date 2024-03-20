@@ -10,7 +10,6 @@ function initMap() {
     zoom: 14
   });
   infowindow = new google.maps.InfoWindow();
-
   new AutocompleteDirectionsHandler(map);
 }
 
@@ -35,7 +34,7 @@ function AutocompleteDirectionsHandler(map) {
       placeIdOnly: true
     });
 
-  this.setupClickListener('changemode-walking', 'WALKING');
+//   this.setupClickListener('changemode-walking', 'WALKING');
   this.setupClickListener('changemode-transit', 'TRANSIT');
   this.setupClickListener('changemode-driving', 'DRIVING');
 

@@ -12,28 +12,28 @@ const submitError = document.querySelector("#submit__error");
 // console.log(submitError)
 // console.log(submit);
 
-const inputs = document.querySelectorAll('input');
-console.log(inputs);
-submit.addEventListener("click", function(){
-   // alert('hello');
-for (i=0; i<inputs.length; i++){
-   let name = inputs[i].textContent;
-   console.log(name);
+// const inputs = document.querySelectorAll('input');
+// console.log(inputs);
+// submit.addEventListener("click", function(){
+//    // alert('hello');
+// for (i=0; i<inputs.length; i++){
+//    let name = inputs[i].textContent;
+//    console.log(name);
 
-   if(name.textContent === '' || name.valueOf === null){
-      submitError.textContent = 'fill the spaces';
-      // inputs.style.border = '1px solid red';
-      console.log(submitError.textContent);
-   }
-   else{
+//    if(name.textContent === '' || name.valueOf === null){
+//       submitError.textContent = 'fill the spaces';
+//       // inputs.style.border = '1px solid red';
+//       console.log(submitError.textContent);
+//    }
+//    else{
       // submitError.innerHTML = `${nameError}`;
 
-      submitError.textContent = 'correct';
+      // submitError.textContent = 'correct';
    // alert("correct");
    // inputs.style.border ="1px solid red";
-}
+// }
 // if(nameError.value ==='' || nameError.value === null){
-}
+// }
 // function validateName(){
 //   let name = document.querySelector(".name__error").value;
 //   if(name.length === 0){
@@ -52,7 +52,7 @@ for (i=0; i<inputs.length; i++){
 // function valiDatephone(){
 //    let phone = document.getElementById("contact-name").value;
 // }
-})  
+// })  
 
 
 
