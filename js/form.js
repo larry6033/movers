@@ -1,6 +1,6 @@
 const emailError = document.querySelector(".email__error");
 const nameError = document.querySelector(".name__error");
-console.log(nameError);
+// console.log(nameError);
 const phoneError = document.querySelector(".phone__error");
 const addressError = document.querySelector(".address__error");
 const locationError = document.querySelector(".location__error");
@@ -8,82 +8,50 @@ const destinationError = document.querySelector(".destination__error");
 const vehicleError = document.querySelector(".vehicle__error");
 const messageError = document.querySelector(".message__error");
 const submit = document.querySelector("#phone__error");
-console.log(submit);
-// console.log(messageError);
-// console.log(vehicleError);
+const submitError = document.querySelector("#submit__error");
+// console.log(submitError)
+// console.log(submit);
 
-// nameError.addEventListener("keyup", function(){
-//    //  alert('bitch');
-
-// function valiDateName(){
-//  let name = document.querySelector("#contact-name").value;
-
-//  if(name.length == 0){
-//     nameError.innerHTML = "name is required";
-//     return false;
-//  }
-//  if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
-//     nameError.innerHTML = 'write full name';
-//     return false;
-//  }
-//  nameError.innerHTML = 'valid';
-//  return true;
-// // console.log(nameError)
-// }
-// // valiDateName ();
-
-// });
-
-
-
-// cartSections.addEventListener("click", function(e){
-   // alert(hello)
-//    if(e.target.classList.contains("increment")){
-//      const currentQuantity = e.target.previousElementSibling;
- 
-//      currentQuantity.textContent++;
- 
-//      console.log("adding items ");
-//      updatePrices();
-//      getSubTotals();
-//    }else if(e.target.classList.contains("decrement")){
-//      const currentQuantity = e.target.nextElementSibling;
-//      if(currentQuantity.textContent>1){
-//      currentQuantity.textContent--;
-//      }
-//      console.log("remove items");
-//      updatePrices()
-//      getSubTotals();
-//    }
-//  })
-// let validateName = '';
-// for
+const inputs = document.querySelectorAll('input');
+console.log(inputs);
 submit.addEventListener("click", function(){
-   alert(hello);
+   // alert('hello');
+for (i=0; i<inputs.length; i++){
+   let name = inputs[i].textContent;
+   console.log(name);
 
+   if(name.textContent === '' || name.valueOf === null){
+      submitError.textContent = 'fill the spaces';
+      // inputs.style.border = '1px solid red';
+      console.log(submitError.textContent);
+   }
+   else{
+      // submitError.innerHTML = `${nameError}`;
 
-function validateName(name){
-  let name = document.querySelector(".name__error").value;
-  if(name.length === 0){
-   nameError.innerHTML = 'name is required';
-   return false;
-  }
-  if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
-   nameError.innerHTML = 'write full name';
-return false;
-  }
-  nameError.innerHTML = "valid";
-  return true;
+      submitError.textContent = 'correct';
+   // alert("correct");
+   // inputs.style.border ="1px solid red";
 }
-validateName();
-
-function valiDatephone(){
-   let phone = document.getElementById("contact-name").value;
-
+// if(nameError.value ==='' || nameError.value === null){
 }
+// function validateName(){
+//   let name = document.querySelector(".name__error").value;
+//   if(name.length === 0){
+//    nameError.innerHTML = 'name is required';
+//    return false;
+//   }
+//   if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
+//    nameError.innerHTML = 'write full name';
+// return false;
+//   }
+//   nameError.innerHTML = "valid";
+//   return true;
+// }
+// validateName();
 
-
-
+// function valiDatephone(){
+//    let phone = document.getElementById("contact-name").value;
+// }
 })  
 
 

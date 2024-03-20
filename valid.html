@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+
     <title>Document</title>
 </head>
 <body>
  <div class="container">
-    
- </div>   
+    <button type="submit" class="button" id="popup" onclick="openPopup()">submit</button>
+
+    <div class="pop__up" >
+
+        <img src="images/logo (2).png">
+        <h2>Thank you!</h2>
+        <p>your details have been successifully submitted. Thanks!</p>
+        <button type="button" class="popup" id="popup" onclick="closePopup()">ok</button>
+    </div>
+ </div> 
+ 
+ <script src="js/script.js">
+let popUp = document.querySelectorAll("#popup");
+console.log(popUp);
+    function openPopup(){   
+        popUp.classList.add("open-popup");
+    }
+    function closePopup(){
+        popUp.classList.add("open-popup");
+    }
+
+ </script>
 </body>
 </html>

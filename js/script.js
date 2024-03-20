@@ -1,10 +1,8 @@
 // console.log(nameError);
 
 // const locationError = document.querySelector(".location__error");
-console.log(locationError);
+// console.log(locationError);
 
-const nameError = document.querySelector(".name__error");
-console.log(nameError);
 
 
 
