@@ -221,7 +221,7 @@ body,
   justify-content: space-between;
   align-items: center;
   flex-direction: center;
-  padding: 1em;
+  padding: 1em 5em;
   margin: 2em;
   box-shadow: 0 0 1rem solid black;
 }

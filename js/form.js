@@ -1,74 +1,132 @@
-const emailError = document.querySelector(".email__error");
-const nameError = document.querySelector(".name__error");
-// console.log(nameError);
-const phoneError = document.querySelector(".phone__error");
-const addressError = document.querySelector(".address__error");
-const locationError = document.querySelector(".location__error");
-const destinationError = document.querySelector(".destination__error");
-const vehicleError = document.querySelector(".vehicle__error");
-const messageError = document.querySelector(".message__error");
-const submit = document.querySelector("#phone__error");
-const submitError = document.querySelector("#submit__error");
-// console.log(submitError)
-// console.log(submit);
+let color = ["red", "blue", "green"];
+let directions = [];
+let shortest = [];
+let fastest = [];
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -33.8688, lng: 151.2195 },
+    zoom: 13,
+  });
 
-// const inputs = document.querySelectorAll('input');
-// console.log(inputs);
-// submit.addEventListener("click", function(){
-//    // alert('hello');
-// for (i=0; i<inputs.length; i++){
-//    let name = inputs[i].textContent;
-//    console.log(name);
+  let endInput = document.getElementById("end");
+  let startValue, endValue;
+  let startInput = document.getElementById("start");
 
-//    if(name.textContent === '' || name.valueOf === null){
-//       submitError.textContent = 'fill the spaces';
-//       // inputs.style.border = '1px solid red';
-//       console.log(submitError.textContent);
-//    }
-//    else{
-      // submitError.innerHTML = `${nameError}`;
+  let startAutocomplete = new google.maps.places.Autocomplete(startInput);
+  let endAutocomplete = new google.maps.places.Autocomplete(endInput);
 
-      // submitError.textContent = 'correct';
-   // alert("correct");
-   // inputs.style.border ="1px solid red";
-// }
-// if(nameError.value ==='' || nameError.value === null){
-// }
-// function validateName(){
-//   let name = document.querySelector(".name__error").value;
-//   if(name.length === 0){
-//    nameError.innerHTML = 'name is required';
-//    return false;
-//   }
-//   if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
-//    nameError.innerHTML = 'write full name';
-// return false;
-//   }
-//   nameError.innerHTML = "valid";
-//   return true;
-// }
-// validateName();
+  startAutocomplete.addListener("place_changed", function () {
+    startValue = startAutocomplete.getPlace().formatted_address;
+  });
 
-// function valiDatephone(){
-//    let phone = document.getElementById("contact-name").value;
-// }
-// })  
+  endAutocomplete.addListener("place_changed", function () {
+    endValue = endAutocomplete.getPlace().formatted_address;
+  });
 
+  let markers = [];
+  let directionsService = new google.maps.DirectionsService();
+  let directionsRenderer = new google.maps.DirectionsRenderer();
 
+  document
+    .getElementById("calculateDistance")
+    .addEventListener("click", function () {
+      for (let i = 0; i < directions.length; i++) {
+        directions[i].setMap(null);
+      }
+      directions = [];
+      shortest = [];
+      fastest = [];
+      for (let i = 0; i < color.length; i++) {
+        //   document.getElementById(color[i]).value = "";
+      }
+      showAlternativeRoutes(
+        directionsService,
+        directionsRenderer,
+        startValue,
+        endValue
+      );
+    });
+}
 
+function showAlternativeRoutes(
+  directionsService,
+  directionsRenderer,
+  startValue,
+  endValue
+) {
+  console.log(startValue);
+  directionsService.route(
+    {
+      origin: startValue,
+      destination: endValue,
+      travelMode: "DRIVING",
+      provideRouteAlternatives: true,
+    },
+    function (response, status) {
+      // console.log(response)
+      if (status === "OK") {
+        for (let i = 0; i < response.routes.length; i++) {
+          console.log(response.routes[i].legs[0].distance);
+          shortest.push(response.routes[i].legs[0].distance.value);
+          fastest.push(response.routes[i].legs[0].duration.value);
+        }
+        shortest.sort(function (a, b) {
+          return a - b;
+        });
+        fastest.sort(function (a, b) {
+          return a - b;
+        });
+        console.log(shortest);
 
+        for (let i = 0; i < response.routes.length; i++) {
+          let dr = new google.maps.DirectionsRenderer();
+          directions.push(dr);
+          dr.setOptions({
+            map: map,
+            directions: response,
+            routeIndex: i,
+            polylineOptions: {
+              strokeColor: color[i],
+              strokeOpacity: 0.5,
+            },
+          });
 
+          if (
+            shortest[0] == response.routes[i].legs[0].distance.value &&
+            fastest[0] == response.routes[i].legs[0].duration.value
+          ) {
+            document.getElementById(color[i]).value =
+              response.routes[i].legs[0].distance.text +
+              " - " +
+              response.routes[i].legs[0].duration.text +
+              "(fastest and shortest)";
+          } else if (fastest[0] == response.routes[i].legs[0].duration.value) {
+            document.getElementById(color[i]).value =
+              response.routes[i].legs[0].distance.text +
+              " - " +
+              response.routes[i].legs[0].duration.text +
+              "(fastest)";
+          } else if (shortest[0] == response.routes[i].legs[0].distance.value) {
+            document.getElementById(color[i]).value =
+              response.routes[i].legs[0].distance.text +
+              " - " +
+              response.routes[i].legs[0].duration.text +
+              "(shortest)";
+          } else {
+            document.getElementById(color[i]).value =
+              response.routes[i].legs[0].distance.text +
+              " - " +
+              response.routes[i].legs[0].duration.text;
+          }
+        }
+        map.setZoom(11);
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// document.getElementById("calculateDistance").addEventListener("click", ()=>{
+//    console.log(shortest)
+// })

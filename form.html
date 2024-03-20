@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=519b09bcd038461aa28d5cf702b9e0e9"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk"></script> -->
 
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
@@ -29,98 +27,94 @@
     </nav>
 
     <!-- hero section -->
-    <!-- <section class="inputs">
-       <div class="form__content">
-        <label>Enter your name:</label>
+    <section class="inputs">
+      <div class="form__content">
+        <!-- <label>Enter your name:</label> -->
         <input
           type="text"
           class="name__error input"
-          placeholder="Enter your name"
+          placeholder="Name"
           id="contact-name"/>
         
-        <span id="name-error"></span>
+        <!-- <span id="name-error"></span> -->
       </div>
 
       <div class="form__content">
-        <label>Enter your Email:</label>
+        <!-- <label>Enter your Email:</label> -->
         <input
           type="text"
           class="email__error input"
           placeholder="Enter your email"
         />
-        <span id="name-error"></span>
+        <!-- <span id="name-error"></span> -->
       </div> 
       <div class="form__content">
-        <label>Enter Phone No:</label>
+        <!-- <label>Enter Phone No:</label> -->
         <input
           type="text"
           class="phone__error input"
           placeholder="Enter your phone no."
         />
-        <span id="phone-error"></span>
-      </div>
-       <div class="form__content">
-        <label>Enter Address:</label>
-        <input
-          type="text"
-          class="address__error input"
-          placeholder="enter your Address"
-        /> -->
-        <!-- <span id="address-error"></span> -->
-      <!-- </div> -->
-      <!-- <div class="form__content">
-        <label>current location:</label>
-        <input type="text" class="location__error input" placeholder="Enter your " />
-        <span id="location-error"></span>
+        <!-- <span id="phone-error"></span> -->
       </div>
       <div class="form__content">
-        <label>preffered destination:</label>
-        <input
-          type="text"
-          class="destination__error input"
-          placeholder="Enter your destination"
-        />
-        <span id="destination-error"></span>
-      </div>
-      <div class="form__content">
-        <label>requiried vehicle:</label>
+        <!-- <label>requiried vehicle:</label> -->
         <input
           type="text"
           class="vehicle__error input"
           placeholder="choose your preffered vehicle"
         />
-        <span id="vehicle-error"></span>
+        <!-- <span id="vehicle-error"></span> -->
+      </div>
+       <div class="form__content">
+        <!-- <label>Enter Address:</label> -->
+        <!-- <input
+          type="text"
+          class="address__error input"
+          placeholder="from"
+        />   -->
+        <input id="start" class="input"  placeholder="from"/>
+
+      <!-- <span id="address-error"></span> -->
       </div>
 
       <div class="form__content">
-        <label>message:</label>
-        <input type="text" class="message__error input" placeholder="message" />
-        <span id="message-error"> </span>
+        <!-- <label>preffered destination:</label> -->
+        <!-- <input
+          type="text"
+          class="destination__error input"
+          placeholder="Enter your destination"
+        /> -->
+        <input id="end" class="input"   placeholder="destination"/>
+        <!-- <span id="destination-error"></span> -->
       </div>
-
-
-
-      <button id="phone__error" class="btn">submit</button>
-      <span id="submit__error"> </span> --> 
-      <!-- <p ></p> -->
-      
-
-
-    <!-- </section> -->
-      <input id="origin-input" value="nairobi, yaya" />
-      <input id="destination-input" value="Nairobi, kasarani " />
+      <button id="calculateDistance" class="btn">bookings</button>
       <div id="mode-selector">
         <!-- <input id="changemode-walking" type="radio" value="WALKING" /> -->
         <input id="changemode-transit" type="radio" value="TRANSIT" />
-        <input id="changemode-driving" type="radio" value="DRIVING" checked="checked" />
+        <input
+          id="changemode-driving"
+          type="radio"
+          value="DRIVING"
+          checked="checked"
+        />
+       
       </div>
-      <div id="total"></div>
-      <div id="map"></div>
       
+      <div id="total"></div>
 
+
+
+      <!-- <button id="phone__error" class="btn">submit</button> -->
+      <!-- <span id="submit__error"> </span> -->
+      <!-- <p ></p> -->
+    </section>
+
+    <div id="map"></div>
+
+    
 
     <!-- footer -->
-
 
     <footer>
       <div>
@@ -136,7 +130,11 @@
         </ul>
       </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCDPu0x2BTa_W-s7qVHYYrpUVdb8N6iJo&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
     <script src="./js/form.js"></script>
   </body>
 </html>
