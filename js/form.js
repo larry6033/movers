@@ -1,4 +1,3 @@
-
 const names = document.querySelector(".name");
 console.log(names);
 const email = document.querySelector(".email");
@@ -7,10 +6,8 @@ const phoneNumber = document.querySelector(".phone");
 console.log(phoneNumber);
 const vehicles = document.querySelector(".vehicle");
 console.log(vehicles);
-let inputPress = document.querySelector(".btn");
+let inputPress = document.querySelector(".input");
 console.log(inputPress);
-
-
 
 let color = ["red", "blue", "green"];
 let directions = [];
@@ -141,35 +138,147 @@ function showAlternativeRoutes(
   );
 }
 
+// inputPress.addEventListener("click", ()=>{
+//    // console.log(shortest);
+//    // alert("hey");
 
+//    if( phoneNumber === 10 ){
+//       return true;
+//       // phoneNumber.value ="input numbers";
+//       parseInt(phoneNumber.value);
+//    }else{
+//       return false;
+//    phoneNumber.value ="input numbers";
+//    }
 
-inputPress.addEventListener("click", ()=>{
-   // console.log(shortest);
-   // alert("hey");
+//   if( vehicles.value === "pickup" || vehicles.value === "lorry"  ){
+//       return true;
+//       vehicles.value;
+//    }else{
+//       return false;
+//    vehicles.value =" not part of our vehicles ";
+//    }
 
-   if( phoneNumber === 10 ){
-      return true;
-      // phoneNumber.value ="input numbers";
-      parseInt(phoneNumber.value);
-   }else{
-      return false;
-   phoneNumber.value ="input numbers";
+//    if( email.classList.contains("@gmail.com")  ){
+//       return true;
+//    }else if( email.classList.contains("number") ){
+//       return false;
+//    email.value =" replace number  ";
+//    }
+// })
+
+// inputPress.addEventListener("keydown", ()=>{
+// // alert('larry');
+// const validateInputs = ()=>{
+//    const userName = names.value.trim();
+//    const userEmail = email.value.trim();
+//    const userVehicle = vehicles.value.trim();
+//    const userNumber = phoneNumber.value.trim();
+
+// if(userName === ""){
+//    setError(userName , 'username is required');
+// }else{
+//    setSuccess(userName);
+// }
+
+// if(userEmail === ""){
+//    setError(email , 'email is required');
+
+// }else if(email.toLowerCase){
+//    setError(email , 'email should be in lowercase');
+
+// }
+// else{
+//    setSuccess(userEmail);
+// }
+
+// if(userVehicle === ""){
+//    setError(vehicles , 'vehicle is required');
+
+// }else if(vehicles= 'lorry'){
+//    setSuccess('available')
+// }
+// else if(vehicles= 'pickup'){
+//    setSuccess('available')
+// }
+
+// if(userEmail === ""){
+//    setError(phoneNumber , 'phone number is required');
+
+// }else{
+//    setSuccess(userNumber);
+// }
+// }
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+   // Add event listeners to inputs for validation
+   let nameInput = document.getElementById('contact-name');
+   let emailInput = document.querySelector('.email');
+   let phoneInput = document.querySelector('.phone');
+   let vehicleInput = document.querySelector('.vehicle');
+
+   nameInput.addEventListener('blur', validateName);
+   emailInput.addEventListener('blur', validateEmail);
+   phoneInput.addEventListener('blur', validatePhone);
+   vehicleInput.addEventListener('blur', displayPrice);
+});
+
+function validateName() {
+   let nameInput = document.getElementById('contact-name');
+   let name = nameInput.value.trim();
+   let nameError = document.getElementById('name-error');
+
+   if (!/^[A-Za-z\s]+$/.test(name)) {
+       nameError.textContent = 'Please enter a valid name.';
+       nameError.textContent.style.color ="red";
+       nameInput.focus();
+   } else {
+       nameError.textContent = '';
    }
+}
 
-  if( vehicles.value === "pickup" || vehicles.value === "lorry"  ){
-      return true;
-      // phoneNumber.value ="input numbers";
-      vehicles.value;
-   }else{
-      return false;
-   vehicles.value =" not part of our vehicles ";
+function validateEmail() {
+   let emailInput = document.querySelector('.email');
+   let email = emailInput.value.trim();
+   let emailError = document.getElementById('email-error');
+
+   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+       emailError.textContent = 'Please enter a valid email address.';
+       emailError.textContent.style.color ="red";
+
+       emailInput.focus();
+   } else {
+       emailError.textContent = '';
    }
+}
 
-   if( email.classList.contains("@gmail.com")  ){
-      return true;
-   }else if( email.classList.contains("number") ){
-      return false;
-   email.value =" replace number  ";
-   }   
-})
+function validatePhone() {
+   let phoneInput = document.querySelector('.phone');
+   let phone = phoneInput.value.trim();
+   let phoneError = document.getElementById('phone-error');
+
+   if (!/^\d{10}$/.test(phone)) {
+       phoneError.textContent = 'Please enter a valid phone number with 10 digits.';
+       phoneError.textContent.style.color ="red";
+
+       phoneInput.focus();
+   } else {
+       phoneError.textContent = '';
+   }
+}
+
+function displayPrice() {
+   let vehicleInput = document.querySelector('.vehicle');
+   let priceSpan = document.getElementById('#price');
+   let vehicle = vehicleInput.value.trim().toLowerCase();
+
+   if (vehicle === 'lorry') {
+       priceSpan.textContent = 'Ksh 20000';
+   } else if (vehicle === 'pickup') {
+       priceSpan.textContent = 'Ksh 10000';
+   } else {
+       priceSpan.textContent = 'fill the space ';
+   }
+}
 
