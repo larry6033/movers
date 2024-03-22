@@ -1,118 +1,127 @@
 @use "../utilities/mixins" as *;
 @use "../utilities/variables" as *;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
 }
 
-.container{
-    width: 100%;
-    height: 100vh;
-    background: #3c5077;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+.anchors a {
+  color: #3c5077;
+  text-decoration: none;
+  font-size: 2rem;
 }
 
-.pop__up{
-    width:400px;
-    background: #fff;
-    border-radius: 6px;
-    position: absolute;
-    // top:0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color:#333;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
+.anchors li {
+  list-style-type: none;
+  cursor: pointer;
+  margin:1em;
 }
 
-.open-popup{
-    visibility: visible;
-    top: -50%;
-    transform:translate(-50%,-50%) scale(1) ;
-}
-.pop__up img{
-width: 100px;
-margin-top: -50px;
-border-radius: 50%;
-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+// body{
+//     // font-size: 2rem;
+// }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #3c5077;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.button{
-    padding: 2em 3em;
-    border: none;
-    border-radius: 50px;
-    color: #fff;
-    background: #333;
-    cursor: pointer;
+.pop__up {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  // top:0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
 }
 
-.pop__up h2{
+.open-popup {
+  visibility: visible;
+  top: -50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+.pop__up img {
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+  padding: 2em 3em;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  background: #333;
+  cursor: pointer;
+}
+
+.pop__up h2 {
   font-size: 38px;
   font-weight: 500;
-  margin: 30px  0 10px; 
+  margin: 30px 0 10px;
 }
 
-.popup{
-    width: 100%;
-    padding:10px 0;
-    margin-top: 50px; 
-    background: #6fd649;
-    color:#fff;
-    border: 0;
-    outline: none;
-    font-size: 18px;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-
+.popup {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 50px;
+  background: #6fd649;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-
-.nav__section{
-    @include flex(space-evenly, center, center, center);
-    background-color: $Very-Pale-Cyan;
-    // position: fixed;
-    width:100%;
+.nav__section {
+  @include flex(space-evenly, center, center, center);
+  background-color: $Very-Pale-Cyan;
+  // position: fixed;
+  width: 100%;
 }
 
-.nav__section h1{
-    color:red;
-    font-size: 3rem;
+.nav__section h1 {
+  color: red;
+  font-size: 3rem;
 }
 
-.nav__list ul li{
-    // @include flex(space-evenly, center, center, row);
-    list-style-type: none;
-    display:inline-flex;
-    // gap:3em;
-    padding:3em;
-    cursor: pointer;
+.nav__list ul li {
+  // @include flex(space-evenly, center, center, row);
+  list-style-type: none;
+  display: inline-flex;
+  // gap:3em;
+  padding: 3em;
+  cursor: pointer;
 }
-.nav__list ul li a{
-list-style-type: none;
+.nav__list ul li a {
+  list-style-type: none;
 }
-
-
 
 @media screen and (max-width: 414px) {
-.nav__section{
+  .nav__section {
     // display: flex;
     // justify-content: space-between;
-    @include flex(center,center);
-    padding:2em;
-}
+    @include flex(center, center);
+    padding: 2em;
+  }
 
-.nav__list ul li{
-    display:none;
-}
-
-
-
+  .nav__list ul li {
+    display: none;
+  }
 }

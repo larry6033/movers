@@ -7,11 +7,14 @@ footer{
     padding:3em;
 }
 
+.footer__left h3{
+    margin: 1em;
+}
 
 @media screen and (max-width: 414px) {
     footer{
         // color: red;
-        display: flex;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap:2em;
