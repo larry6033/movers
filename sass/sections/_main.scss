@@ -146,13 +146,20 @@
 // }
 
 @media screen and (max-width: 414px) {
-  .main {
-    // color: red;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    // background-color: red;
-  }
+.main__services{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.main__flex{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
 
   .inputs{
     width: 100%;

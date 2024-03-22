@@ -11,7 +11,7 @@ console.log(inputPress);
 let radioButton = document.querySelectorAll("#radiobuttons");
 console.log(radioButton);
 let radioButtonsLabel = document.querySelectorAll("#radiobuttonlabel");
-console.log(ra)
+console.log(radioButtonsLabel);
 
 let kilometres;
 
@@ -120,8 +120,10 @@ function showAlternativeRoutes(
               console.log("Total cost for pickup:", totalCostPickup);
               let cash = document.querySelector("#totalCost");
               console.log(cash);
-              for (let i = 0; i < radioButton.length; i++) {
-                let vehicleType = radioButton[i];
+
+
+              for (let i = 0; i < radioButtonsLabel.length; i++) {
+                let vehicleType = radioButtonsLabel[i];
                 console.log(vehicleType);
                 vehicleType.addEventListener("change", function () {
                   if (vehicleType === totalCostLorry) {
