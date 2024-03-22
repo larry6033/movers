@@ -343,11 +343,16 @@ body,
 }
 
 @media screen and (max-width: 414px) {
-  .main__services {
+  .miving {
+    width: 100%;
+  }
+  .main__content {
     display: flex;
     flex-direction: column;
     flex: 1;
     flex-wrap: wrap;
+    width: 100%;
+    display: none;
   }
   .main__flex {
     display: flex;

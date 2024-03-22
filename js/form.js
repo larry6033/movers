@@ -10,8 +10,8 @@ let inputPress = document.querySelector(".input");
 console.log(inputPress);
 let radioButton = document.querySelectorAll("#radiobuttons");
 console.log(radioButton);
-let radioButtonsLabel = document.querySelectorAll("#radiobuttonlabel");
-console.log(radioButtonsLabel);
+// let radioButtonsLabel = document.querySelectorAll("#radiobuttonlabel");
+// console.log(radioButtonsLabel);
 
 let kilometres;
 
@@ -122,18 +122,14 @@ function showAlternativeRoutes(
               console.log(cash);
 
 
-              for (let i = 0; i < radioButtonsLabel.length; i++) {
-                let vehicleType = radioButtonsLabel[i];
+              for (let i = 0; i < radioButton.length; i++) {
+                let vehicleType = radioButton[i];
                 console.log(vehicleType);
-                vehicleType.addEventListener("change", function () {
+                vehicleType.addEventListener("click", function () {
                   if (vehicleType === totalCostLorry) {
-                    cash.innerHTML = `Ksh. ${Math.floor(
-                      totalCostLorry
-                    ).toLocaleString()}`;
+                    cash.innerHTML = `Ksh. ${Math.floor(totalCostLorry).toLocaleString()}`;
                   } else {
-                    cash.innerHTML = `Ksh. ${Math.floor(
-                      totalCostPickup
-                    ).toLocaleString()}`;
+                    cash.innerHTML = `Ksh. ${Math.floor(totalCostPickup).toLocaleString()}`;
                   }
                 });
               }
